@@ -28,11 +28,37 @@
 		DC7AE4962F9BD05E00B904B4 /* NASAAPODTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAAPODTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7AE4A02F9BD05E00B904B4 /* NASAAPODUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAAPODUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7AE4B62F9BD0A200B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
+		DC7AE4D42F9BD12900B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DC7AE4F22F9BD5A900B904B4 /* Exceptions for "NASAAPOD" folder in "NASAAPODTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Presentation/Browse/BrowseView.swift,
+				Presentation/Today/TodayView.swift,
+				RootTabView.swift,
+			);
+			target = DC7AE4952F9BD05E00B904B4 /* NASAAPODTests */;
+		};
+		DC7AE4F32F9BD5A900B904B4 /* Exceptions for "NASAAPOD" folder in "NASAAPODUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Presentation/Browse/BrowseView.swift,
+				Presentation/Today/TodayView.swift,
+				RootTabView.swift,
+			);
+			target = DC7AE49F2F9BD05E00B904B4 /* NASAAPODUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		DC7AE4862F9BD05C00B904B4 /* NASAAPOD */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DC7AE4F22F9BD5A900B904B4 /* Exceptions for "NASAAPOD" folder in "NASAAPODTests" target */,
+				DC7AE4F32F9BD5A900B904B4 /* Exceptions for "NASAAPOD" folder in "NASAAPODUITests" target */,
+			);
 			path = NASAAPOD;
 			sourceTree = "<group>";
 		};
@@ -94,6 +120,13 @@
 			sourceTree = "<group>";
 		};
 		DC7AE4B92F9BD0A200B904B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC7AE4D72F9BD12900B904B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -207,6 +240,10 @@
 			productRefGroup = DC7AE4852F9BD05C00B904B4 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = DC7AE4D72F9BD12900B904B4 /* Products */;
+					ProjectRef = DC7AE4D42F9BD12900B904B4 /* NASAAPOD.xcodeproj */;
+				},
 				{
 					ProductGroup = DC7AE4B92F9BD0A200B904B4 /* Products */;
 					ProjectRef = DC7AE4B62F9BD0A200B904B4 /* NASAAPOD.xcodeproj */;
