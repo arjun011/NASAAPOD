@@ -15,7 +15,7 @@ final class APODRepositoryImpl:APODRepository {
         self.client = client
     }
     
-    func fetchTodayAPOD() async throws -> [APOD] {
+    func fetchTodayAPOD() async throws -> APOD {
         
         return try await self.client.fetchTodayAPOD()
         

@@ -11,10 +11,10 @@ final class NASAAPIClient: APODServiceProtocol {
     
     private var apodTodayURL: URL {
         // Adjust path component as needed for APOD endpoint
-        URL(string: APIConstants.baseURL + "planetary/apod?api_key=\(APIConstants.APIKey)")!
+        URL(string: APIConstants.baseURL + "planetary/apod?api_key=\(APIConstants.apiKey)")!
     }
     
-    func fetchTodayAPOD() async throws -> [APOD] {
+    func fetchTodayAPOD() async throws -> APOD {
         let (data, response) = try await URLSession.shared.data(from: apodTodayURL)
         
         guard let httpResponse = response as? HTTPURLResponse,
@@ -22,7 +22,7 @@ final class NASAAPIClient: APODServiceProtocol {
             throw URLError(.badServerResponse)
         }
         
-       let apodList = try JSONDecoder().decode([APOD].self, from: data)
+       let apodList = try JSONDecoder().decode(APOD.self, from: data)
         return apodList
     }
 }

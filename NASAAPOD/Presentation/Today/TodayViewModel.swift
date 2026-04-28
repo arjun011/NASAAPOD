@@ -16,7 +16,8 @@ import Foundation
     
     func loadTodayAPOD() async {
         do{
-            let apodList = try await repository.fetchTodayAPOD()
+            let apod = try await repository.fetchTodayAPOD()
+            print(apod)
         }catch {
             print(error)
         }
