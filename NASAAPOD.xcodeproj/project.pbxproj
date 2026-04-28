@@ -37,6 +37,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Domain/Models/APOD.swift,
+				Domain/Repository/APODRepository.swift,
 				Presentation/Browse/BrowseView.swift,
 				Presentation/Today/TodayView.swift,
 				RootTabView.swift,
