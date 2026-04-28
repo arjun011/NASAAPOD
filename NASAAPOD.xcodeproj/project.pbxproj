@@ -36,7 +36,9 @@
 		DC7AE4F22F9BD5A900B904B4 /* Exceptions for "NASAAPOD" folder in "NASAAPODTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Data/Repository/APODRepositoryImpl.swift,
+				Data/APOD/Network/APODServiceProtocol.swift,
+				Data/APOD/Network/NASAAPIClient.swift,
+				Data/APOD/Repository/APODRepositoryImpl.swift,
 				Domain/Models/APOD.swift,
 				Domain/Repository/APODRepository.swift,
 				Presentation/Browse/BrowseView.swift,

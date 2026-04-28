@@ -13,4 +13,13 @@ import Foundation
     init(repository: APODRepository) {
         self.repository = repository
     }
+    
+    func loadTodayAPOD() async {
+        do{
+            let apodList = try await repository.fetchTodayAPOD()
+        }catch {
+            print(error)
+        }
+    }
+  
 }
