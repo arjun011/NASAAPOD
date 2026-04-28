@@ -29,12 +29,14 @@
 		DC7AE4A02F9BD05E00B904B4 /* NASAAPODUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAAPODUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7AE4B62F9BD0A200B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
 		DC7AE4D42F9BD12900B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
+		DC7AE6942F9E58F300B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		DC7AE4F22F9BD5A900B904B4 /* Exceptions for "NASAAPOD" folder in "NASAAPODTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Domain/Models/APOD.swift,
 				Presentation/Browse/BrowseView.swift,
 				Presentation/Today/TodayView.swift,
 				RootTabView.swift,
@@ -127,6 +129,13 @@
 			sourceTree = "<group>";
 		};
 		DC7AE4D72F9BD12900B904B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC7AE6982F9E58F300B904B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -240,6 +249,10 @@
 			productRefGroup = DC7AE4852F9BD05C00B904B4 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = DC7AE6982F9E58F300B904B4 /* Products */;
+					ProjectRef = DC7AE6942F9E58F300B904B4 /* NASAAPOD.xcodeproj */;
+				},
 				{
 					ProductGroup = DC7AE4D72F9BD12900B904B4 /* Products */;
 					ProjectRef = DC7AE4D42F9BD12900B904B4 /* NASAAPOD.xcodeproj */;
@@ -578,6 +591,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -602,6 +616,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
