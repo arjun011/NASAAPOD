@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct TodayView: View {
-    
+    @State var model:TodayViewModel = TodayViewModel(repository: APODRepositoryImpl())
+
     var body: some View {
         VStack {
-            Text("ToDay")
+            Text(model.todayAPODDetails?.title ?? "")
         }.task {
-            let model = TodayViewModel(repository: APODRepositoryImpl())
             await model.loadTodayAPOD()
         }
     }
 }
 
 #Preview {
-    TodayView()
+    TodayView(model: TodayViewModel(repository: PreviewAPODRepository()))
 }

@@ -6,21 +6,29 @@
 //
 
 import Foundation
+
 @MainActor
 @Observable final class TodayViewModel {
-    private let repository:APODRepository
-    
+    private let repository: APODRepository
+
     init(repository: APODRepository) {
         self.repository = repository
     }
-    
+
+    var todayAPODDetails: APOD?
+
     func loadTodayAPOD() async {
-        do{
-            let apod = try await repository.fetchTodayAPOD()
-            print(apod)
-        }catch {
+        #if DEBUG
+            // In debug builds, use a mock APOD and return early.
+            self.todayAPODDetails = APOD.mock
+            return
+        #endif
+        
+        do {
+            self.todayAPODDetails = try await repository.fetchTodayAPOD()
+        } catch {
             print(error)
         }
     }
-  
+
 }
