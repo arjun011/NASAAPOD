@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct TodayView: View {
+    
     var body: some View {
         VStack {
             Text("ToDay")
+        }.task {
+            let model = TodayViewModel(repository: APODRepositoryImpl())
+            await model.loadTodayAPOD()
         }
     }
 }

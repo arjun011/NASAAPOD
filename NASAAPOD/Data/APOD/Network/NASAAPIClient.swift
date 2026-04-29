@@ -22,7 +22,7 @@ final class NASAAPIClient: APODServiceProtocol {
             throw URLError(.badServerResponse)
         }
         
-       let apodList = try JSONDecoder().decode(APOD.self, from: data)
-        return apodList
+       return try JSONDecoder().decode(APOD.self, from: data)
+       
     }
 }

@@ -11,14 +11,12 @@ final class APODRepositoryImpl:APODRepository {
     
    private let client:APODServiceProtocol
     
-    init(client: APODServiceProtocol) {
+    init(client: APODServiceProtocol = NASAAPIClient()) {
         self.client = client
     }
     
     func fetchTodayAPOD() async throws -> APOD {
-        
         return try await self.client.fetchTodayAPOD()
-        
     }
     
 }

@@ -16,13 +16,24 @@ struct APOD:Codable,Identifiable, Sendable {
     let date:String
     let explanation:String
     let hdurl:String
-    let media_type:mediaType
+    let mediaType:MediaType
     let service_version:String
     let title:String
     let url:String
     
-    enum mediaType:Codable {
+    enum MediaType:String, Codable {
         case image
         case video
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case copyright
+        case date
+        case explanation
+        case hdurl
+        case mediaType = "media_type"
+        case service_version
+        case title
+        case url
     }
 }
