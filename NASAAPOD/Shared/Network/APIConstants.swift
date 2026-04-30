@@ -9,5 +9,5 @@ import Foundation
 
 enum APIConstants {
     static let apiKey = "3fi8g4ULxfqHvYNxx53PZegRmVRodePwlFSFWvM4"
-    static let baseURL = "https://api.nasa.gov/"
+    static let baseURL = "https://api.nasa.gov"
 }

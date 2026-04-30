@@ -47,6 +47,7 @@
 				Presentation/PreviewSupport/PreviewAPODRepository.swift,
 				Presentation/Today/TodayView.swift,
 				RootTabView.swift,
+				Shared/Extension/Date.swift,
 				Shared/Network/APIConstants.swift,
 			);
 			target = DC7AE4952F9BD05E00B904B4 /* NASAAPODTests */;
