@@ -42,6 +42,7 @@
 				Domain/Models/APOD.swift,
 				Domain/Repository/APODRepository.swift,
 				Presentation/Browse/BrowseView.swift,
+				Presentation/Browse/BrowseViewModel.swift,
 				Presentation/Components/APODVideoView.swift,
 				Presentation/Components/AppErrorView.swift,
 				Presentation/PreviewSupport/PreviewAPODRepository.swift,
@@ -56,6 +57,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Presentation/Browse/BrowseView.swift,
+				Presentation/Browse/BrowseViewModel.swift,
 				Presentation/Today/TodayView.swift,
 				RootTabView.swift,
 			);

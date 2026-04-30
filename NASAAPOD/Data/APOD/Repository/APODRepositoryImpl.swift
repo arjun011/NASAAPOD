@@ -9,7 +9,7 @@ import Foundation
 
 final class APODRepositoryImpl:APODRepository {
     
-   private let client:APODServiceProtocol
+    private let client:APODServiceProtocol
     
     init(client: APODServiceProtocol = NASAAPIClient()) {
         self.client = client
@@ -17,6 +17,10 @@ final class APODRepositoryImpl:APODRepository {
     
     func fetchTodayAPOD() async throws -> APOD {
         return try await self.client.fetchTodayAPOD()
+    }
+    
+    func fetchAPOD(for date: Date) async throws -> APOD {
+        return try await self.client.fetchAPOD(for: date)
     }
     
 }
