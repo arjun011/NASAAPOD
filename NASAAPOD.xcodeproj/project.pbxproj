@@ -42,6 +42,7 @@
 				Domain/Models/APOD.swift,
 				Domain/Repository/APODRepository.swift,
 				Presentation/Browse/BrowseView.swift,
+				Presentation/Components/AppErrorView.swift,
 				Presentation/PreviewSupport/PreviewAPODRepository.swift,
 				Presentation/Today/TodayView.swift,
 				RootTabView.swift,
