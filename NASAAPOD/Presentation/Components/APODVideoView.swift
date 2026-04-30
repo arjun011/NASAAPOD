@@ -13,7 +13,7 @@ struct APODVideoView: View {
         ContentUnavailableView {
                     Label("Video APOD", systemImage: "play.rectangle.fill")
                 } description: {
-                    Text("Today's APOD is a video.")
+                    Text("")
                 } actions: {
                     Link("Open Video", destination: videoUrl)
                         .buttonStyle(.borderedProminent)

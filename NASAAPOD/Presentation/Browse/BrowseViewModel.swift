@@ -16,9 +16,17 @@ import Foundation
     var errorMessage: String?
     var apodDetails: APOD?
     var selectedDate: Date = .now
+    private var loadTask: Task<Void, Never>?
 
     init(repository: APODRepository) {
         self.repository = repository
+    }
+    
+    func selectedDateChange() {
+        loadTask?.cancel()
+        loadTask = Task {
+            await loadAPOD(from: self.selectedDate)
+        }
     }
 
     func loadAPOD(from date: Date) async {

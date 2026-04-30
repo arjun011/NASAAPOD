@@ -8,11 +8,61 @@
 import SwiftUI
 
 struct BrowseView: View {
+    
+    @State var model = BrowseViewModel(repository: APODRepositoryImpl())
+    
     var body: some View {
-        Text("Browse")
+        VStack {
+            
+            if let message = model.errorMessage {
+                self.errorView(message)
+            } else if model.isLoading {
+                ProgressView()
+                    .font(.largeTitle)
+
+            } else if let apod = model.apodDetails {
+                APODDetailView(apod: apod)
+            }
+            
+        }.navigationTitle("Browse")
+        .navigationBarTitleDisplayMode(.automatic)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                DatePicker("Today", selection: $model.selectedDate, in: ...Date(), displayedComponents: .date)
+                    .labelsHidden()
+                    .onChange(of: model.selectedDate) { _, _ in
+                        
+                        print("API Called on  \(model.selectedDate)")
+                        self.model.selectedDateChange()
+                        
+                    }
+            }
+        }.task {
+            await model.loadAPOD(from: model.selectedDate)
+        }
+    }
+    
+    private func errorView(_ message: String) -> some View {
+
+        AppErrorView(
+            title: "Something went wrong",
+            message: message,
+            systemImage: "exclamationmark.triangle",
+            actionTitle: "Retry"
+        ) {
+            Task {
+                await model.loadAPOD(from: model.selectedDate)
+            }
+        }
+
     }
 }
 
 #Preview {
-    BrowseView()
+    
+    NavigationStack {
+        BrowseView(model: BrowseViewModel(repository: PreviewAPODRepository()))
+    }
+    
+    
 }
