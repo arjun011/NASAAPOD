@@ -19,7 +19,7 @@ struct APOD:Codable,Identifiable, Sendable {
     let mediaType:MediaType
     let service_version:String
     let title:String
-    let url:String
+    let url:URL
     
     enum MediaType:String, Codable {
         case image
@@ -46,5 +46,5 @@ extension APOD {
                            mediaType: MediaType.image,
                            service_version: "v1",
                            title: "CG 30: Cometary Globules",
-                           url: "https://apod.nasa.gov/apod/image/2604/CG30Globules_Salamme_960.jpg")
+                           url: URL(string: "https://apod.nasa.gov/apod/image/2604/CG30Globules_Salamme_960.jpg")!)
 }

@@ -34,24 +34,32 @@ struct TodayView: View {
 
                         VStack(alignment: .leading) {
 
-                            AsyncImage(
-                                url: URL(string: apod.url)
-                            ) { image in
+                            if apod.mediaType == .image {
+                                AsyncImage(
+                                    url: apod.url
+                                ) { image in
 
-                                image
-                                    .resizable()
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(maxWidth: .infinity)
+
+                                } placeholder: {
+                                    Rectangle()
+                                        .fill(.gray.opacity(0.15))
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(maxWidth: .infinity)
+                                        .overlay {
+                                            ProgressView()
+                                        }
+                                }
+                            }else {
+                                APODVideoView(videoUrl: apod.url)
                                     .aspectRatio(contentMode: .fit)
                                     .frame(maxWidth: .infinity)
-
-                            } placeholder: {
-                                Rectangle()
-                                    .fill(.gray.opacity(0.15))
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: .infinity)
-                                    .overlay {
-                                        ProgressView()
-                                    }
                             }
+                            
+                            
 
                             VStack(alignment: .leading, spacing: 5) {
                                 Text(apod.title)
@@ -68,7 +76,7 @@ struct TodayView: View {
                         }
                     }
                 }
-            }.ignoresSafeArea(edges: .top)
+            }
            
         }.task {
             await model.loadTodayAPOD()
