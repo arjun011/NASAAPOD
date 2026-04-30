@@ -30,6 +30,7 @@
 		DC7AE4B62F9BD0A200B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
 		DC7AE4D42F9BD12900B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
 		DC7AE6942F9E58F300B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
+		DC7AE7562FA3A45700B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -43,6 +44,7 @@
 				Domain/Repository/APODRepository.swift,
 				Presentation/Browse/BrowseView.swift,
 				Presentation/Browse/BrowseViewModel.swift,
+				Presentation/Components/APODDetailView.swift,
 				Presentation/Components/APODVideoView.swift,
 				Presentation/Components/AppErrorView.swift,
 				Presentation/PreviewSupport/PreviewAPODRepository.swift,
@@ -147,6 +149,13 @@
 			sourceTree = "<group>";
 		};
 		DC7AE6982F9E58F300B904B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC7AE75A2FA3A45700B904B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -260,6 +269,10 @@
 			productRefGroup = DC7AE4852F9BD05C00B904B4 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = DC7AE75A2FA3A45700B904B4 /* Products */;
+					ProjectRef = DC7AE7562FA3A45700B904B4 /* NASAAPOD.xcodeproj */;
+				},
 				{
 					ProductGroup = DC7AE6982F9E58F300B904B4 /* Products */;
 					ProjectRef = DC7AE6942F9E58F300B904B4 /* NASAAPOD.xcodeproj */;
