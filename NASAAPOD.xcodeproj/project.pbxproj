@@ -41,6 +41,7 @@
 				Data/APOD/Network/NASAAPIClient.swift,
 				Data/APOD/Repository/APODRepositoryImpl.swift,
 				Domain/Models/APOD.swift,
+				Domain/Models/APODFetchResult.swift,
 				Domain/Repository/APODRepository.swift,
 				Presentation/Browse/BrowseView.swift,
 				Presentation/Browse/BrowseViewModel.swift,
