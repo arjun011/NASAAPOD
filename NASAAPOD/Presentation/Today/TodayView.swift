@@ -16,55 +16,60 @@ struct TodayView: View {
     var body: some View {
 
         ZStack {
-
-            ScrollView(.vertical) {
-
-                VStack(alignment: .leading) {
-
-                    AsyncImage(
-                        url: URL(string: model.todayAPODDetails?.url ?? "")
-                    ) { image in
-
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: .infinity)
-
-                    } placeholder: {
-                        Rectangle()
-                            .fill(.gray.opacity(0.15))
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: .infinity)
-                            .overlay {
-                                ProgressView()
-                            }
+            
+            VStack {
+                if let message =  model.errorMessage {
+                    AppErrorView(title: "Something went wrong", message: message, systemImage: "exclamationmark.triangle", actionTitle: "Retry") {
+                        Task {
+                            await model.loadTodayAPOD()
+                        }
                     }
+                }else if model.isLoading {
+                    ProgressView()
+                        .font(.largeTitle)
 
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text(model.todayAPODDetails?.title ?? "")
-                            .font(.title2)
-                            .fontWeight(.semibold)
+                }else if let apod = model.todayAPODDetails {
+                
+                    ScrollView(.vertical) {
 
-                        Text(model.todayAPODDetails?.date ?? "")
-                            .font(.subheadline)
-                            .foregroundStyle(.gray)
+                        VStack(alignment: .leading) {
 
-                        Text(model.todayAPODDetails?.explanation ?? "")
+                            AsyncImage(
+                                url: URL(string: apod.url)
+                            ) { image in
 
-                    }.padding(.horizontal, 10)
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: .infinity)
 
+                            } placeholder: {
+                                Rectangle()
+                                    .fill(.gray.opacity(0.15))
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: .infinity)
+                                    .overlay {
+                                        ProgressView()
+                                    }
+                            }
+
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(apod.title)
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+
+                                Text(apod.date)
+                                    .font(.subheadline)
+                                    .foregroundStyle(.gray)
+
+                                Text(apod.explanation)
+
+                            }.padding(.horizontal, 10)
+                        }
+                    }
                 }
-
-            }
-            .blur(radius: model.isLoading ? 1 : 0)
-            .disabled(model.isLoading)
-            .ignoresSafeArea(edges: .top)
-
-            if model.isLoading {
-                ProgressView()
-                    .font(.largeTitle)
-
-            }
+            }.ignoresSafeArea(edges: .top)
+           
         }.task {
             await model.loadTodayAPOD()
         }
