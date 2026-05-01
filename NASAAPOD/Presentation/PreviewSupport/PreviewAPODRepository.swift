@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PreviewAPODRepository:APODRepository {
+final class PreviewAPODRepository:APODRepository {
     
     func fetchTodayAPOD() async throws -> APODFetchResult {
         return APODFetchResult(apod: .mock, source: .remote)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct APOD:Codable,Identifiable, Sendable {
+struct APOD: Codable, Identifiable, Sendable, Equatable {
     
     var id:String {
         date
@@ -48,3 +48,4 @@ extension APOD {
                            title: "CG 30: Cometary Globules",
                            url: URL(string: "https://apod.nasa.gov/apod/image/2604/CG30Globules_Salamme_960.jpg")!)
 }
+
