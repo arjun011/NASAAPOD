@@ -16,8 +16,20 @@ final class APODRepositoryImpl: APODRepository {
         self.client = client
     }
 
-    func fetchTodayAPOD() async throws -> APOD {
-        return try await self.client.fetchTodayAPOD()
+    func fetchTodayAPOD() async throws -> APODFetchResult {
+        
+        do {
+            let apod = try await self.client.fetchTodayAPOD()
+            cacheManager.save(apod)
+            return APODFetchResult(apod: apod, source: .remote)
+        } catch {
+
+            if let cachedAPOD = cacheManager.load() {
+                return APODFetchResult(apod: cachedAPOD, source: .cache)
+            }
+            throw error
+        }
+
     }
 
     func fetchAPOD(for date: Date) async throws -> APODFetchResult {

@@ -18,20 +18,26 @@ import Foundation
     var isLoading = false
     var errorMessage: String?
     var todayAPODDetails: APOD?
+    var isShowingCachedData:Bool = false
     
 
     func loadTodayAPOD() async {
         
         isLoading = true
+        self.errorMessage = nil
+        self.todayAPODDetails = nil
+        self.isShowingCachedData = false
         
         do {
-            self.todayAPODDetails = try await repository.fetchTodayAPOD()
-            print(self.todayAPODDetails?.title ?? "Title")
+            let apodResult = try await repository.fetchTodayAPOD()
+            
+            self.todayAPODDetails = apodResult.apod
+            self.isShowingCachedData = apodResult.source == .cache
+            
         } catch {
             print(error.localizedDescription)
             errorMessage = "Unable to load APOD"
         }
-        
         isLoading = false
     }
 

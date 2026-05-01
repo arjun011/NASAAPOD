@@ -9,12 +9,15 @@ import Foundation
 
 class PreviewAPODRepository:APODRepository {
     
+    func fetchTodayAPOD() async throws -> APODFetchResult {
+        return APODFetchResult(apod: .mock, source: .remote)
+    }
+    
+    
     func fetchAPOD(for date: Date) async throws -> APODFetchResult {
         return APODFetchResult(apod: .mock, source: .remote)
     }
     
-    func fetchTodayAPOD() async throws -> APOD {
-        APOD.mock
-    }
+   
 }
 

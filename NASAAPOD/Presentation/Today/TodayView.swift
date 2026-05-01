@@ -25,6 +25,12 @@ struct TodayView: View {
             } else if let apod = model.todayAPODDetails {
                 APODDetailView(apod: apod)
             }
+            if model.isShowingCachedData {
+                Text("Showing last cached APOD because the today data could not be loaded.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .padding()
+            }
         }.task {
             await model.loadTodayAPOD()
         }

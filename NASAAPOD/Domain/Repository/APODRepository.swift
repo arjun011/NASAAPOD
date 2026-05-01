@@ -8,6 +8,6 @@
 import Foundation
 
 protocol APODRepository: Sendable {
-    func fetchTodayAPOD() async throws -> APOD
+    func fetchTodayAPOD() async throws -> APODFetchResult
     func fetchAPOD(for date: Date) async throws -> APODFetchResult
 }
