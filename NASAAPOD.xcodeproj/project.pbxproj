@@ -14,29 +14,23 @@
 			remoteGlobalIDString = DC7AE4832F9BD05C00B904B4;
 			remoteInfo = NASAAPOD;
 		};
-		DC7AE4A12F9BD05E00B904B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC7AE47C2F9BD05C00B904B4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC7AE4832F9BD05C00B904B4;
-			remoteInfo = NASAAPOD;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DC7AE4842F9BD05C00B904B4 /* NASAAPOD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAAPOD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7AE4962F9BD05E00B904B4 /* NASAAPODTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAAPODTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC7AE4A02F9BD05E00B904B4 /* NASAAPODUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAAPODUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7AE4B62F9BD0A200B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
 		DC7AE4D42F9BD12900B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
 		DC7AE6942F9E58F300B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
 		DC7AE7562FA3A45700B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
+		DC7AECFD2FA4EE0800B904B4 /* NASAAPOD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NASAAPOD.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		DC7AE4F22F9BD5A900B904B4 /* Exceptions for "NASAAPOD" folder in "NASAAPODTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Data/APOD/CacheManager/APODCacheManager.swift,
 				Data/APOD/Network/APODServiceProtocol.swift,
 				Data/APOD/Network/NASAAPIClient.swift,
 				Data/APOD/Repository/APODRepositoryImpl.swift,
@@ -50,21 +44,12 @@
 				Presentation/Components/AppErrorView.swift,
 				Presentation/PreviewSupport/PreviewAPODRepository.swift,
 				Presentation/Today/TodayView.swift,
+				Presentation/Today/TodayViewModel.swift,
 				RootTabView.swift,
 				Shared/Extension/Date.swift,
 				Shared/Network/APIConstants.swift,
 			);
 			target = DC7AE4952F9BD05E00B904B4 /* NASAAPODTests */;
-		};
-		DC7AE4F32F9BD5A900B904B4 /* Exceptions for "NASAAPOD" folder in "NASAAPODUITests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Presentation/Browse/BrowseView.swift,
-				Presentation/Browse/BrowseViewModel.swift,
-				Presentation/Today/TodayView.swift,
-				RootTabView.swift,
-			);
-			target = DC7AE49F2F9BD05E00B904B4 /* NASAAPODUITests */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -73,7 +58,6 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				DC7AE4F22F9BD5A900B904B4 /* Exceptions for "NASAAPOD" folder in "NASAAPODTests" target */,
-				DC7AE4F32F9BD5A900B904B4 /* Exceptions for "NASAAPOD" folder in "NASAAPODUITests" target */,
 			);
 			path = NASAAPOD;
 			sourceTree = "<group>";
@@ -105,13 +89,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC7AE49D2F9BD05E00B904B4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -130,7 +107,6 @@
 			children = (
 				DC7AE4842F9BD05C00B904B4 /* NASAAPOD.app */,
 				DC7AE4962F9BD05E00B904B4 /* NASAAPODTests.xctest */,
-				DC7AE4A02F9BD05E00B904B4 /* NASAAPODUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +133,13 @@
 			sourceTree = "<group>";
 		};
 		DC7AE75A2FA3A45700B904B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC7AED012FA4EE0800B904B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -211,29 +194,6 @@
 			productReference = DC7AE4962F9BD05E00B904B4 /* NASAAPODTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DC7AE49F2F9BD05E00B904B4 /* NASAAPODUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC7AE4B02F9BD05E00B904B4 /* Build configuration list for PBXNativeTarget "NASAAPODUITests" */;
-			buildPhases = (
-				DC7AE49C2F9BD05E00B904B4 /* Sources */,
-				DC7AE49D2F9BD05E00B904B4 /* Frameworks */,
-				DC7AE49E2F9BD05E00B904B4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DC7AE4A22F9BD05E00B904B4 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				DC7AE4A32F9BD05E00B904B4 /* NASAAPODUITests */,
-			);
-			name = NASAAPODUITests;
-			packageProductDependencies = (
-			);
-			productName = NASAAPODUITests;
-			productReference = DC7AE4A02F9BD05E00B904B4 /* NASAAPODUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -248,10 +208,6 @@
 						CreatedOnToolsVersion = 26.0.1;
 					};
 					DC7AE4952F9BD05E00B904B4 = {
-						CreatedOnToolsVersion = 26.0.1;
-						TestTargetID = DC7AE4832F9BD05C00B904B4;
-					};
-					DC7AE49F2F9BD05E00B904B4 = {
 						CreatedOnToolsVersion = 26.0.1;
 						TestTargetID = DC7AE4832F9BD05C00B904B4;
 					};
@@ -279,6 +235,10 @@
 					ProjectRef = DC7AE6942F9E58F300B904B4 /* NASAAPOD.xcodeproj */;
 				},
 				{
+					ProductGroup = DC7AED012FA4EE0800B904B4 /* Products */;
+					ProjectRef = DC7AECFD2FA4EE0800B904B4 /* NASAAPOD.xcodeproj */;
+				},
+				{
 					ProductGroup = DC7AE4D72F9BD12900B904B4 /* Products */;
 					ProjectRef = DC7AE4D42F9BD12900B904B4 /* NASAAPOD.xcodeproj */;
 				},
@@ -291,7 +251,6 @@
 			targets = (
 				DC7AE4832F9BD05C00B904B4 /* NASAAPOD */,
 				DC7AE4952F9BD05E00B904B4 /* NASAAPODTests */,
-				DC7AE49F2F9BD05E00B904B4 /* NASAAPODUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,13 +264,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DC7AE4942F9BD05E00B904B4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC7AE49E2F9BD05E00B904B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -335,13 +287,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC7AE49C2F9BD05E00B904B4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -349,11 +294,6 @@
 			isa = PBXTargetDependency;
 			target = DC7AE4832F9BD05C00B904B4 /* NASAAPOD */;
 			targetProxy = DC7AE4972F9BD05E00B904B4 /* PBXContainerItemProxy */;
-		};
-		DC7AE4A22F9BD05E00B904B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC7AE4832F9BD05C00B904B4 /* NASAAPOD */;
-			targetProxy = DC7AE4A12F9BD05E00B904B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -486,6 +426,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = NASAAPOD;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -522,6 +463,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = NASAAPOD;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -599,56 +541,6 @@
 			};
 			name = Release;
 		};
-		DC7AE4B12F9BD05E00B904B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.NASAAPODUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NASAAPOD;
-			};
-			name = Debug;
-		};
-		DC7AE4B22F9BD05E00B904B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.NASAAPODUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NASAAPOD;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -675,15 +567,6 @@
 			buildConfigurations = (
 				DC7AE4AE2F9BD05E00B904B4 /* Debug */,
 				DC7AE4AF2F9BD05E00B904B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DC7AE4B02F9BD05E00B904B4 /* Build configuration list for PBXNativeTarget "NASAAPODUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC7AE4B12F9BD05E00B904B4 /* Debug */,
-				DC7AE4B22F9BD05E00B904B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
