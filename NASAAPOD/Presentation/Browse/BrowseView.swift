@@ -23,6 +23,12 @@ struct BrowseView: View {
             } else if let apod = model.apodDetails {
                 APODDetailView(apod: apod)
             }
+            if model.isShowingCachedData {
+                Text("Showing last cached APOD because the selected date could not be loaded.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .padding()
+            }
             
         }.navigationTitle("Browse")
         .navigationBarTitleDisplayMode(.automatic)

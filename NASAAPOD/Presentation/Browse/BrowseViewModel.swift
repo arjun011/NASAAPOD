@@ -16,6 +16,8 @@ import Foundation
     var errorMessage: String?
     var apodDetails: APOD?
     var selectedDate: Date = .now
+    var isShowingCachedData = false
+
     private var loadTask: Task<Void, Never>?
 
     init(repository: APODRepository) {
@@ -33,11 +35,16 @@ import Foundation
         self.isLoading = true
         self.errorMessage = nil
         self.apodDetails = nil
+        self.isShowingCachedData = false
         
         do {
-            self.apodDetails = try await self.repository.fetchAPOD(
+            let apodResult = try await self.repository.fetchAPOD(
                 for: date
             )
+            
+            self.apodDetails = apodResult.apod
+            self.isShowingCachedData = apodResult.source == .cache
+            
         } catch {
             print(error.localizedDescription)
             errorMessage = "Unable to load APOD for selected date."

@@ -7,20 +7,33 @@
 
 import Foundation
 
-final class APODRepositoryImpl:APODRepository {
-    
-    private let client:APODServiceProtocol
-    
+final class APODRepositoryImpl: APODRepository {
+
+    private let client: APODServiceProtocol
+    private let cacheManager = APODCacheManager()
+
     init(client: APODServiceProtocol = NASAAPIClient()) {
         self.client = client
     }
-    
+
     func fetchTodayAPOD() async throws -> APOD {
         return try await self.client.fetchTodayAPOD()
     }
-    
-    func fetchAPOD(for date: Date) async throws -> APOD {
-        return try await self.client.fetchAPOD(for: date)
+
+    func fetchAPOD(for date: Date) async throws -> APODFetchResult {
+
+        do {
+            let apod = try await self.client.fetchAPOD(for: date)
+            cacheManager.save(apod)
+            return APODFetchResult(apod: apod, source: .remote)
+        } catch {
+
+            if let cachedAPOD = cacheManager.load() {
+                return APODFetchResult(apod: cachedAPOD, source: .cache)
+            }
+            throw error
+        }
+
     }
-    
+
 }

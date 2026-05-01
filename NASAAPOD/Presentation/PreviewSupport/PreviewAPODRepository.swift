@@ -9,8 +9,8 @@ import Foundation
 
 class PreviewAPODRepository:APODRepository {
     
-    func fetchAPOD(for date: Date) async throws -> APOD {
-        APOD.mock
+    func fetchAPOD(for date: Date) async throws -> APODFetchResult {
+        return APODFetchResult(apod: .mock, source: .remote)
     }
     
     func fetchTodayAPOD() async throws -> APOD {
