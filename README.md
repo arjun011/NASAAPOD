@@ -33,10 +33,18 @@ An iOS application that displays NASA’s **Astronomy Picture of the Day (APOD)*
 
 ## 📸 Screenshots
 
-Screenshots/today.png
-Screenshots/browse.png
-Screenshots/videoPlay.png
-Screenshots/error.png
+<div style="display: flex; overflow-x: auto; gap: 12px; padding: 12px;">
+  <img src="Screenshots/today.png" />
+  <img src="Screenshots/browse.png" />
+  <img src="Screenshots/videoPlay.png"/>
+  <img src="Screenshots/error.png" />
+  
+</div>
+
+
+
+
+
 
 ## 🏗 Architecture
 
